@@ -37,7 +37,6 @@
 #include "esp_err.h"
 #include "esp_sleep.h"
 #include "esp_clk_tree.h"
-// #include "soc/clk_tree_defs.h"
 #include "soc/gpio_sig_map.h"
 
 
@@ -121,45 +120,6 @@ static ledc_timer_config_t timers[PWM_TIMER_MAX];
 // If the PWM frequency is less than EMPIRIC_FREQ, then LEDC_REF_CLK_HZ(1 MHz) source is used, else LEDC_APB_CLK_HZ(80 MHz) source is used
 #define EMPIRIC_FREQ (10) // Hz
 #endif
-
-// Clock alias values (used by clock parameter)
-// PWM_LAST_CLK_IDX is not clock by a maker to identify outofindex values
-// PWM_AUTO_CLK is used in order to auto determinate the clock (no specific clock has been required)
-
-enum { PWM_AUTO_CLK, PWM_APB_CLK, PWM_RC_FAST_CLK, PWM_REF_TICK, PWM_XTAL_CLK, PWM_PLL_CLK, _PWM_LAST_CLK_IDX };
-static const ledc_clk_cfg_t clk_source_map[] = {
-    -2,
-    #if SOC_LEDC_SUPPORT_APB_CLOCK
-    LEDC_USE_APB_CLK,
-    #else
-    -1,
-    #endif
-    LEDC_USE_RC_FAST_CLK, // LEDC_USE_RC_FAST_CLK == LEDC_USE_RTC8M_CLK
-    #if SOC_LEDC_SUPPORT_REF_TICK
-    LEDC_USE_REF_TICK,
-    #else
-    -1,
-    #endif
-    #if SOC_LEDC_SUPPORT_XTAL_CLOCK
-    LEDC_USE_XTAL_CLK,
-    #else
-    -1,
-    #endif
-    #if SOC_LEDC_SUPPORT_PLL_DIV_CLOCK
-    LEDC_USE_PLL_DIV_CLK,
-    #else
-    -1,
-    #endif
-};
-
-// MicroPython bindings for ESP32-PWM
-#define MICROPY_PY_MACHINE_PWM_CLASS_CONSTANTS \
-    { MP_ROM_QSTR(MP_QSTR_PWM_AUTO_CLK), MP_ROM_INT(PWM_AUTO_CLK) }, \
-    { MP_ROM_QSTR(MP_QSTR_PWM_APB_CLK), MP_ROM_INT(PWM_APB_CLK) }, \
-    { MP_ROM_QSTR(MP_QSTR_PWM_RC_FAST_CLK), MP_ROM_INT(PWM_RC_FAST_CLK) }, \
-    { MP_ROM_QSTR(MP_QSTR_PWM_REF_TICK), MP_ROM_INT(PWM_REF_TICK) }, \
-    { MP_ROM_QSTR(MP_QSTR_PWM_XTAL_CLK), MP_ROM_INT(PWM_XTAL_CLK) }, \
-    { MP_ROM_QSTR(MP_QSTR_PWM_PLL_CLK), MP_ROM_INT(PWM_PLL_CLK) }, \
 
 // Config of timer upon which we run all PWM'ed GPIO pins
 static bool pwm_inited = false;
@@ -510,8 +470,6 @@ static ledc_clk_cfg_t find_clock_in_use() {
     return found_clk;
 }
 
-
-
 // Helper function to check the maximum allowed frequency regarding the clock source and SoC
 // return True if the frequency is supported.
 static bool check_freq(machine_pwm_obj_t *self, int freq) {
@@ -652,6 +610,7 @@ static void mp_machine_pwm_init_helper(machine_pwm_obj_t *self,
         if (pwm_clk != LEDC_AUTO_CLK) {
             pwm_src_clock = pwm_clk;
         } else {
+
             #if SOC_LEDC_SUPPORT_PLL_DIV_CLOCK
             pwm_src_clock = LEDC_USE_PLL_DIV_CLK;
             #elif SOC_LEDC_SUPPORT_APB_CLOCK
@@ -662,28 +621,12 @@ static void mp_machine_pwm_init_helper(machine_pwm_obj_t *self,
             #error No supported PWM / LEDC clocks.
             #endif
 
-        #if SOC_LEDC_SUPPORT_REF_TICK
-        if (freq < EMPIRIC_FREQ) {
-            pwm_src_clock = PWM_REF_TICK;         // 1 MHz
-            pwm_src_clock = PWM_APB_CLK;
+            #if SOC_LEDC_SUPPORT_REF_TICK
+            if (freq < EMPIRIC_FREQ) {
+                pwm_src_clock = LEDC_USE_REF_TICK;    // 1 MHz
+            }
+            #endif
         }
-        #else
-        #if SOC_LEDC_SUPPORT_PLL_DIV_CLOCK
-        pwm_src_clock = LEDC_USE_PLL_DIV_CLK;
-        #elif SOC_LEDC_SUPPORT_APB_CLOCK
-        pwm_src_clock = LEDC_USE_APB_CLK;
-        #elif SOC_LEDC_SUPPORT_XTAL_CLOCK
-        pwm_src_clock = LEDC_USE_XTAL_CLK;
-        #else
-        #error No supported PWM / LEDC clocks.
-        #endif
-        #endif
-
-        #if SOC_LEDC_SUPPORT_REF_TICK
-        if (freq < EMPIRIC_FREQ) {
-            pwm_src_clock = LEDC_USE_REF_TICK;    // 1 MHz
-        }
-        #endif
     }
 
     // Check for clock source conflic
@@ -758,13 +701,6 @@ static void mp_machine_pwm_init_helper(machine_pwm_obj_t *self,
     if (timer_idx == -1) {
         mp_raise_msg_varg(&mp_type_ValueError, MP_ERROR_TEXT("out of PWM timers:%d"), PWM_TIMER_MAX); // in all modes
     }
-
-    #if !(PWM_SUPPORT_INDEP_CLOCK_SRC)
-    // Check for the clock source consistency in case of ESP32-S3/C3 and C6
-    if (is_timer_with_different_clock(timer_idx, pwm_src_clock)) {
-        mp_raise_ValueError(MP_ERROR_TEXT("one or more active timers use a different clock source, which is not supported by the current SoC."));
-    }
-    #endif
 
     // Check for the clock source consistency in case of ESP32-S3/C3 and C6
     if (is_timer_with_different_clock(timer_idx, pwm_src_clock)) {
