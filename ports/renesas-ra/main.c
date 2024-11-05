@@ -435,6 +435,10 @@ soft_reset_exit:
     pyb_thread_deinit();
     #endif
 
+    #if MICROPY_PY_SYS_ATEXIT
+    mp_sys_atexit_execute();
+    #endif
+
     MICROPY_BOARD_END_SOFT_RESET(&state);
 
     gc_sweep_all();

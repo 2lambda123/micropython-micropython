@@ -292,6 +292,11 @@ soft_reset:
     pwm_deinit_all();
     #endif
 
+    #if MICROPY_PY_SYS_ATEXIT
+    mp_sys_atexit_execute();
+    #endif
+
+    gc_sweep_all();
     mp_deinit();
 
     printf("MPY: soft reboot\n");

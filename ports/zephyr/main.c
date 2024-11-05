@@ -172,6 +172,10 @@ soft_reset:
     gc_collect();
     #endif
 
+    #if MICROPY_PY_SYS_ATEXIT
+    mp_sys_atexit_execute();
+    #endif
+
     gc_sweep_all();
     mp_deinit();
 

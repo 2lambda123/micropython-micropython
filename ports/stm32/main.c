@@ -698,6 +698,10 @@ soft_reset_exit:
     MP_STATE_PORT(pyb_stdio_uart) = NULL;
     #endif
 
+    #if MICROPY_PY_SYS_ATEXIT
+    mp_sys_atexit_execute();
+    #endif
+
     MICROPY_BOARD_END_SOFT_RESET(&state);
 
     gc_sweep_all();

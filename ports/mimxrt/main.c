@@ -159,6 +159,9 @@ int main(void) {
         machine_uart_deinit_all();
         machine_pwm_deinit_all();
         soft_timer_deinit();
+        #if MICROPY_PY_SYS_ATEXIT
+        mp_sys_atexit_execute();
+        #endif
         gc_sweep_all();
         mp_deinit();
     }

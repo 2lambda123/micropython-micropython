@@ -241,6 +241,9 @@ int main(int argc, char **argv) {
         #if MICROPY_HW_ENABLE_USB_RUNTIME_DEVICE
         mp_usbd_deinit();
         #endif
+        #if MICROPY_PY_SYS_ATEXIT
+        mp_sys_atexit_execute();
+        #endif
 
         // Hook for resetting anything right at the end of a soft reset command.
         MICROPY_BOARD_END_SOFT_RESET();
