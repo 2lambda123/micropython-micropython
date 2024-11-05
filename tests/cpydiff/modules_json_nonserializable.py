@@ -8,8 +8,7 @@ import json
 
 a = bytes(x for x in range(256))
 try:
-    z = json.dumps(a)
-    x = json.loads(z)
-    print("Should not get here")
+    z = json.dumps(json)
+    print("Produced non-conforming json string", repr(z))
 except TypeError:
     print("TypeError")
