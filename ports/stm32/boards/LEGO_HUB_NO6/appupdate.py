@@ -2,7 +2,8 @@
 # MIT license; Copyright (c) 2022-2024 Damien P. George
 
 from micropython import const
-import random, struct, machine, fwupdate, spiflash, pyb
+import struct, machine, fwupdate, spiflash, pyb
+import secrets
 
 _IOCTL_BLOCK_COUNT = const(4)
 _IOCTL_BLOCK_SIZE = const(5)
@@ -43,7 +44,7 @@ def update_app(filename):
     # Partition the raw filesystem into two segments for wear levelling.
     block_count = flash.ioctl(_IOCTL_BLOCK_COUNT, 0)
     block_size = flash.ioctl(_IOCTL_BLOCK_SIZE, 0)
-    block_start = random.randrange(0, block_count)
+    block_start = secrets.SystemRandom().randrange(0, block_count)
     print(f"Raw filesystem block layout: 0 .. {block_start} .. {block_count}")
 
     # Copy the file to the special raw filesystem.
