@@ -8,5 +8,5 @@ except:
     print("SKIP")
     raise SystemExit
 
-print(eval(bytearray(b'1 + 1')))
-print(eval(memoryview(b'2 + 2')))
+print(eval(bytearray(b"1 + 1")))
+print(eval(memoryview(b"2 + 2")))

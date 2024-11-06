@@ -20,5 +20,5 @@ print(d["a"], d["b"])
 
 
 # dict of a class that has no locals_dict (return empty dict).
-d = type(type('')).__dict__
+d = type(type("")).__dict__
 print(d is not None)

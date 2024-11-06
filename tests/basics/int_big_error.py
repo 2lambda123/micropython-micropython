@@ -31,21 +31,21 @@ except TypeError:
 try:
     bytearray(i)
 except OverflowError:
-    print('OverflowError')
+    print("OverflowError")
 
 # to test conversion of negative mpz to machine int
 # (we know << will convert to machine int, even though it fails to do the shift)
 try:
     i << (-(i >> 40))
 except ValueError:
-    print('ValueError')
+    print("ValueError")
 
 try:
     i // 0
 except ZeroDivisionError:
-    print('ZeroDivisionError')
+    print("ZeroDivisionError")
 
 try:
     i % 0
 except ZeroDivisionError:
-    print('ZeroDivisionError')
+    print("ZeroDivisionError")

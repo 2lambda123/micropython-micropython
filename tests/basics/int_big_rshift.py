@@ -5,5 +5,5 @@ print(i >> 1000)
 # result needs rounding up
 i = -(1 << 70)
 print(i >> 80)
-i = -0xffffffffffffffff
+i = -0xFFFFFFFFFFFFFFFF
 print(i >> 32)

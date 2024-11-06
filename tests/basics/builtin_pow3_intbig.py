@@ -12,11 +12,11 @@ print(pow(555557, 1000002, 1000003))
 # Tests for 3 arg pow with large values
 
 # This value happens to be prime
-x = 0xd48a1e2a099b1395895527112937a391d02d4a208bce5d74b281cf35a57362502726f79a632f063a83c0eba66196712d963aa7279ab8a504110a668c0fc38a7983c51e6ee7a85cae87097686ccdc359ee4bbf2c583bce524e3f7836bded1c771a4efcb25c09460a862fc98e18f7303df46aaeb34da46b0c4d61d5cd78350f3edb60e6bc4befa712a849
-y = 0x3accf60bb1a5365e4250d1588eb0fe6cd81ad495e9063f90880229f2a625e98c59387238670936afb2cafc5b79448e4414d6cd5e9901aa845aa122db58ddd7b9f2b17414600a18c47494ed1f3d49d005a5
+x = 0xD48A1E2A099B1395895527112937A391D02D4A208BCE5D74B281CF35A57362502726F79A632F063A83C0EBA66196712D963AA7279AB8A504110A668C0FC38A7983C51E6EE7A85CAE87097686CCDC359EE4BBF2C583BCE524E3F7836BDED1C771A4EFCB25C09460A862FC98E18F7303DF46AAEB34DA46B0C4D61D5CD78350F3EDB60E6BC4BEFA712A849
+y = 0x3ACCF60BB1A5365E4250D1588EB0FE6CD81AD495E9063F90880229F2A625E98C59387238670936AFB2CAFC5B79448E4414D6CD5E9901AA845AA122DB58DDD7B9F2B17414600A18C47494ED1F3D49D005A5
 
-print(hex(pow(2, 200, x))) # Should not overflow, just 1 << 200
-print(hex(pow(2, x-1, x))) # Should be 1, since x is prime
-print(hex(pow(y, x-1, x))) # Should be 1, since x is prime
-print(hex(pow(y, y-1, x))) # Should be a 'big value'
-print(hex(pow(y, y-1, y))) # Should be a 'big value'
+print(hex(pow(2, 200, x)))  # Should not overflow, just 1 << 200
+print(hex(pow(2, x - 1, x)))  # Should be 1, since x is prime
+print(hex(pow(y, x - 1, x)))  # Should be 1, since x is prime
+print(hex(pow(y, y - 1, x)))  # Should be a 'big value'
+print(hex(pow(y, y - 1, y)))  # Should be a 'big value'

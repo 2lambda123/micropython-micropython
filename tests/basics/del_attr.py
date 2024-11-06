@@ -2,6 +2,7 @@ class C:
     def f():
         pass
 
+
 # del a class attribute
 
 del C.f
@@ -36,4 +37,4 @@ try:
     del int.to_bytes
 except (AttributeError, TypeError):
     # uPy raises AttributeError, CPython raises TypeError
-    print('AttributeError/TypeError')
+    print("AttributeError/TypeError")

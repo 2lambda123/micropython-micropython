@@ -1,7 +1,9 @@
 # test when we subclass a type with the buffer protocol
 
+
 class my_bytes(bytes):
     pass
+
 
 b1 = my_bytes([0, 1])
 b2 = my_bytes([2, 3])

@@ -1,5 +1,6 @@
 # triple nested exceptions
 
+
 def f():
     try:
         foo()
@@ -14,6 +15,7 @@ def f():
             except:
                 print("except 3")
             bak()
+
 
 try:
     f()

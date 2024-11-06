@@ -12,10 +12,10 @@ except AttributeError:
 
 # CPython is more verbose; no need to match exactly
 
-print('FileIO' in str(sys.stdout.buffer))
-print('FileIO' in str(sys.stderr.buffer))
-print('FileIO' in str(sys.stdin.buffer))
+print("FileIO" in str(sys.stdout.buffer))
+print("FileIO" in str(sys.stderr.buffer))
+print("FileIO" in str(sys.stdin.buffer))
 
-print('FileIO' in str(type(sys.stdout.buffer)))
-print('FileIO' in str(type(sys.stderr.buffer)))
-print('FileIO' in str(type(sys.stdin.buffer)))
+print("FileIO" in str(type(sys.stdout.buffer)))
+print("FileIO" in str(type(sys.stderr.buffer)))
+print("FileIO" in str(type(sys.stdin.buffer)))

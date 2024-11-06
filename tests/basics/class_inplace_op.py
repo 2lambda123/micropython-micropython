@@ -1,8 +1,8 @@
 # Case 1: Immutable object (e.g. number-like)
 # __iadd__ should not be defined, will be emulated using __add__
 
-class A:
 
+class A:
     def __init__(self, v):
         self.v = v
 
@@ -11,6 +11,7 @@ class A:
 
     def __repr__(self):
         return "A({})".format(self.v)
+
 
 a = A(5)
 b = a
@@ -22,8 +23,8 @@ print(b)
 # Case 2: Mutable object (e.g. list-like)
 # __iadd__ should be defined
 
-class L:
 
+class L:
     def __init__(self, v):
         self.v = v
 
@@ -38,6 +39,7 @@ class L:
 
     def __repr__(self):
         return "L({})".format(self.v)
+
 
 c = L([1, 2])
 d = c

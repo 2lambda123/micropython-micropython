@@ -3,7 +3,7 @@ for rhs in range(2, 11):
     lhs = 1
     for k in range(100):
         res = lhs * rhs
-        print(lhs, '*', rhs, '=', res)
+        print(lhs, "*", rhs, "=", res)
         lhs = res
 
 # below tests pos/neg combinations that overflow small int

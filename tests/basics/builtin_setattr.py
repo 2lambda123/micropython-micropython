@@ -1,5 +1,4 @@
 class A:
-
     var = 132
 
     def __init__(self):
@@ -13,13 +12,13 @@ print(a.var)
 print(a.var2)
 
 try:
-    setattr(a, b'var3', 1)
+    setattr(a, b"var3", 1)
 except TypeError:
-    print('TypeError')
+    print("TypeError")
 
 # try setattr on a built-in function
 try:
-    setattr(int, 'to_bytes', 1)
+    setattr(int, "to_bytes", 1)
 except (AttributeError, TypeError):
     # uPy raises AttributeError, CPython raises TypeError
-    print('AttributeError/TypeError')
+    print("AttributeError/TypeError")

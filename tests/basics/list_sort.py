@@ -33,14 +33,19 @@ print(l[0], l[-1])
 l.sort(reverse=True)
 print(l[0], l[-1])
 
+
 # test user-defined ordering
 class A:
     def __init__(self, x):
         self.x = x
+
     def __lt__(self, other):
         return self.x > other.x
+
     def __repr__(self):
         return str(self.x)
+
+
 l = [A(5), A(2), A(1), A(3), A(4)]
 print(l)
 l.sort()

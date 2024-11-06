@@ -11,7 +11,7 @@ print("foo\nbar\n".split())
 
 # empty separator should fail
 try:
-    "abc".split('')
+    "abc".split("")
 except ValueError:
     print("ValueError")
 

@@ -11,5 +11,5 @@ print(a)
 try:
     a.append(None)
 except TypeError:
-    print('TypeError')
+    print("TypeError")
 print(a)

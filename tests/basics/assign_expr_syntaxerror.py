@@ -1,10 +1,12 @@
 # test SyntaxError with := operator
 
+
 def test(code):
     try:
         print(eval(code))
     except SyntaxError:
-        print('SyntaxError')
+        print("SyntaxError")
+
 
 test("x := 1")
 test("((x, y) := 1)")

@@ -10,6 +10,7 @@ print("scope0")
 print(scope0())
 print(globals().get("var0", None))
 
+
 # Test that var1 gets closed over correctly in the list comprehension.
 def scope1():
     var1 = 0
@@ -23,6 +24,7 @@ print("scope1")
 scope1()
 print(globals().get("var1", None))
 
+
 # Test that var2 in the comprehension honours the global declaration.
 def scope2():
     global var2
@@ -33,6 +35,7 @@ def scope2():
 print("scope2")
 scope2()
 print(globals().get("var2", None))
+
 
 # Test that var1 in the comprehension remains local to inner1.
 def scope3():
@@ -49,6 +52,7 @@ print("scope3")
 scope3()
 print(globals().get("var3", None))
 
+
 # Test that var4 in the comprehension honours the global declarations.
 def scope4():
     global var4
@@ -64,6 +68,7 @@ def scope4():
 print("scope4")
 scope4()
 print(globals().get("var4", None))
+
 
 # Test that var5 in the comprehension honours the nonlocal declaration.
 def scope5():

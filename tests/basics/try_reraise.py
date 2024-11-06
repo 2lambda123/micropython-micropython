@@ -1,10 +1,12 @@
 # Reraising last exception with raise w/o args
 
+
 def f():
     try:
         raise ValueError("val", 3)
     except:
         raise
+
 
 try:
     f()

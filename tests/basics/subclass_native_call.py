@@ -5,21 +5,25 @@
 # in turns needs PinBase.
 try:
     import machine
+
     machine.PinBase
     machine.Signal
 except:
     print("SKIP")
     raise SystemExit
 
+
 class Pin(machine.PinBase):
-    #def __init__(self):
+    # def __init__(self):
     #    self.v = 0
 
     def value(self, v=None):
         return 42
 
+
 class MySignal(machine.Signal):
     pass
+
 
 s = MySignal(Pin())
 

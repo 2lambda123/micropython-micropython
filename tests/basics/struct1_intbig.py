@@ -6,15 +6,15 @@ except ImportError:
 
 # check maximum pack on 32-bit machine
 print(struct.pack("<I", 2**32 - 1))
-print(struct.pack("<I", 0xffffffff))
+print(struct.pack("<I", 0xFFFFFFFF))
 
 # long long ints
 print(struct.pack("<Q", 1))
 print(struct.pack(">Q", 1))
 print(struct.pack("<Q", 2**64 - 1))
 print(struct.pack(">Q", 2**64 - 1))
-print(struct.pack("<Q", 0xffffffffffffffff))
-print(struct.pack(">Q", 0xffffffffffffffff))
+print(struct.pack("<Q", 0xFFFFFFFFFFFFFFFF))
+print(struct.pack(">Q", 0xFFFFFFFFFFFFFFFF))
 print(struct.pack("<q", -1))
 print(struct.pack(">q", -1))
 print(struct.pack("<Q", 1234567890123456789))
@@ -31,8 +31,8 @@ print(struct.unpack("<I", b"\xff\xff\xff\xff"))
 print(struct.unpack("<Q", b"\xff\xff\xff\xff\xff\xff\xff\xff"))
 
 # check small int overflow
-print(struct.unpack("<i", b'\xff\xff\xff\x7f'))
-print(struct.unpack("<q", b'\xff\xff\xff\xff\xff\xff\xff\x7f'))
+print(struct.unpack("<i", b"\xff\xff\xff\x7f"))
+print(struct.unpack("<q", b"\xff\xff\xff\xff\xff\xff\xff\x7f"))
 
 # test with negative big integers that are actually small in magnitude
 bigzero = (1 << 70) - (1 << 70)

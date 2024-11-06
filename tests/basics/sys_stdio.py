@@ -12,10 +12,10 @@ except AttributeError:
 
 # CPython is more verbose; no need to match exactly
 
-print('TextIOWrapper' in str(sys.stdout))
-print('TextIOWrapper' in str(sys.stderr))
-print('TextIOWrapper' in str(sys.stdin))
+print("TextIOWrapper" in str(sys.stdout))
+print("TextIOWrapper" in str(sys.stderr))
+print("TextIOWrapper" in str(sys.stdin))
 
-print('TextIOWrapper' in str(type(sys.stdout)))
-print('TextIOWrapper' in str(type(sys.stderr)))
-print('TextIOWrapper' in str(type(sys.stdin)))
+print("TextIOWrapper" in str(type(sys.stdout)))
+print("TextIOWrapper" in str(type(sys.stderr)))
+print("TextIOWrapper" in str(type(sys.stdin)))

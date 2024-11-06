@@ -4,10 +4,12 @@ def gen():
     yield 2
     return 3
 
+
 def gen2():
     print("here1")
     print((yield from gen()))
     print("here2")
+
 
 g = gen2()
 print(list(g))
@@ -20,8 +22,10 @@ def gen7(x):
     else:
         raise StopIteration(444)
 
+
 def gen8():
     print((yield from map(gen7, range(100))))
+
 
 g = gen8()
 print(list(g))

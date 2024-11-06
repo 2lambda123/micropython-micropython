@@ -6,10 +6,13 @@ def f():
     try:
         raise ValueError()
     finally:
-        print('finally')
+        print("finally")
         return 0
-    print('got here')
+    print("got here")
+
+
 print(f())
+
 
 # nested, return in outer
 def f():
@@ -17,13 +20,16 @@ def f():
         try:
             raise ValueError
         finally:
-            print('finally 1')
-        print('got here')
+            print("finally 1")
+        print("got here")
     finally:
-        print('finally 2')
+        print("finally 2")
         return 2
-    print('got here')
+    print("got here")
+
+
 print(f())
+
 
 # nested, return in inner
 def f():
@@ -31,13 +37,16 @@ def f():
         try:
             raise ValueError
         finally:
-            print('finally 1')
+            print("finally 1")
             return 1
-        print('got here')
+        print("got here")
     finally:
-        print('finally 2')
-    print('got here')
+        print("finally 2")
+    print("got here")
+
+
 print(f())
+
 
 # nested, return in inner and outer
 def f():
@@ -45,14 +54,17 @@ def f():
         try:
             raise ValueError
         finally:
-            print('finally 1')
+            print("finally 1")
             return 1
-        print('got here')
+        print("got here")
     finally:
-        print('finally 2')
+        print("finally 2")
         return 2
-    print('got here')
+    print("got here")
+
+
 print(f())
+
 
 # nested with reraise
 def f():
@@ -61,12 +73,15 @@ def f():
             raise ValueError
         except:
             raise
-        print('got here')
+        print("got here")
     finally:
-        print('finally')
+        print("finally")
         return 0
-    print('got here')
+    print("got here")
+
+
 print(f())
+
 
 # triple nesting with reraise
 def f():
@@ -79,9 +94,12 @@ def f():
         except:
             raise
     finally:
-        print('finally')
+        print("finally")
         return 0
+
+
 print(f())
+
 
 # exception when matching exception
 def f():
@@ -90,15 +108,20 @@ def f():
     except NonExistingError:
         pass
     finally:
-        print('finally')
+        print("finally")
         return 0
+
+
 print(f())
+
 
 # raising exception class, not instance
 def f():
     try:
         raise ValueError
     finally:
-        print('finally')
+        print("finally")
         return 0
+
+
 print(f())

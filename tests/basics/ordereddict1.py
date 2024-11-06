@@ -40,4 +40,4 @@ print(d.popitem())
 try:
     d.popitem()
 except:
-    print('empty')
+    print("empty")

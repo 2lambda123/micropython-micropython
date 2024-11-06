@@ -15,4 +15,4 @@ try:
     print("SKIP")
     raise SystemExit
 except SyntaxError:
-    print('SyntaxError')
+    print("SyntaxError")

@@ -24,10 +24,10 @@ print(tuple(range(20)))
 try:
     +()
 except TypeError:
-    print('TypeError')
+    print("TypeError")
 
 # unsupported type on RHS of add
 try:
     () + None
 except TypeError:
-    print('TypeError')
+    print("TypeError")

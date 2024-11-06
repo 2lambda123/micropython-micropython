@@ -1,7 +1,7 @@
 # tests transition from small to large int representation by left-shift operation
 for i in range(1, 17):
     for shift in range(70):
-        print(i, '<<', shift, '=', i << shift)
+        print(i, "<<", shift, "=", i << shift)
 
 # test bit-shifting negative integers
 for i in range(8):
@@ -17,4 +17,4 @@ for i in range(8):
     print(-100000000000000000000000000004 >> i)
 
 # shl by zero
-print((1<<70) << 0)
+print((1 << 70) << 0)

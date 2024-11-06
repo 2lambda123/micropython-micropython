@@ -44,4 +44,4 @@ print(l)
 try:
     [][0:1] = 123
 except TypeError:
-    print('TypeError')
+    print("TypeError")

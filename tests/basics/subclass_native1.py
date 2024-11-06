@@ -1,6 +1,7 @@
 class mylist(list):
     pass
 
+
 a = mylist([1, 2, 5])
 # Test setting instance attr
 a.attr = "something"
@@ -19,12 +20,15 @@ print(len(a))
 print(a + [20, 30, 40])
 # Test binary op of base type, with 2nd arg being same class as 1st arg
 # TODO: Faults
-#print(a + a)
+# print(a + a)
+
 
 def foo():
     print("hello from foo")
 
+
 try:
+
     class myfunc(type(foo)):
         pass
 except TypeError:
@@ -32,7 +36,8 @@ except TypeError:
 
 # multiple bases with layout conflict
 try:
+
     class A(type, tuple):
         None
 except TypeError:
-    print('TypeError')
+    print("TypeError")

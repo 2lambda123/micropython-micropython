@@ -8,8 +8,11 @@ def f():
     try:
         print(x)
     except NameError:
-        print("NameError");
+        print("NameError")
+
+
 f()
+
 
 # delete local then try to delete it again
 def g():
@@ -21,5 +24,7 @@ def g():
     try:
         del x
     except NameError:
-        print("NameError");
+        print("NameError")
+
+
 g()

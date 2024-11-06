@@ -1,23 +1,23 @@
 # test builtin ord (whether or not we support unicode)
 
-print(ord('a'))
+print(ord("a"))
 
 try:
-    ord('')
+    ord("")
 except TypeError:
     print("TypeError")
 
 # bytes also work in ord
 
-print(ord(b'a'))
-print(ord(b'\x00'))
-print(ord(b'\x01'))
-print(ord(b'\x7f'))
-print(ord(b'\x80'))
-print(ord(b'\xff'))
+print(ord(b"a"))
+print(ord(b"\x00"))
+print(ord(b"\x01"))
+print(ord(b"\x7f"))
+print(ord(b"\x80"))
+print(ord(b"\xff"))
 
 try:
-    ord(b'')
+    ord(b"")
 except TypeError:
     print("TypeError")
 
@@ -25,4 +25,4 @@ except TypeError:
 try:
     ord(1)
 except TypeError:
-    print('TypeError')
+    print("TypeError")

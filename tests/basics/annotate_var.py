@@ -9,6 +9,7 @@ print(x)
 t: tuple = 1, 2
 print(t)
 
+
 # a pure annotation in a function makes that variable local
 def f():
     x: int
@@ -16,10 +17,15 @@ def f():
         print(x)
     except NameError:
         print("NameError")
+
+
 f()
+
 
 # here, "x" should remain a global
 def f():
     x.y: int
     print(x)
+
+
 f()

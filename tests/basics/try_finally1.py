@@ -16,11 +16,14 @@ finally:
 print()
 
 print("noexc-finally-func-finally")
+
+
 def func2():
     try:
         print("try2")
     finally:
         print("finally2")
+
 
 try:
     print("try1")
@@ -83,6 +86,7 @@ finally:
     print("finally1")
 print()
 
+
 # case where exception is raised after a finally has finished (tests that the finally doesn't run again)
 def func():
     try:
@@ -90,6 +94,8 @@ def func():
     finally:
         print("finally")
     foo
+
+
 try:
     func()
 except:

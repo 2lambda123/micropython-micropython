@@ -1,11 +1,14 @@
 # inheritance
 
+
 class A:
     def a():
-        print('A.a() called')
+        print("A.a() called")
+
 
 class B(A):
     pass
+
 
 print(type(A))
 print(type(B))

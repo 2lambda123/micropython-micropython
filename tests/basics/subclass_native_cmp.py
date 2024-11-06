@@ -1,7 +1,9 @@
 # Test calling non-special method inherited from native type
 
+
 class mytuple(tuple):
     pass
+
 
 t = mytuple((1, 2, 3))
 print(t)

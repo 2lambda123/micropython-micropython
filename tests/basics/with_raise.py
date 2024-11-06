@@ -1,5 +1,6 @@
 # test with when context manager raises in __enter__/__exit__
 
+
 class CtxMgr:
     def __init__(self, id):
         self.id = id
@@ -7,13 +8,14 @@ class CtxMgr:
     def __enter__(self):
         print("__enter__", self.id)
         if 10 <= self.id < 20:
-            raise Exception('enter', self.id)
+            raise Exception("enter", self.id)
         return self
 
     def __exit__(self, a, b, c):
         print("__exit__", self.id, repr(a), repr(b))
         if 15 <= self.id < 25:
-            raise Exception('exit', self.id)
+            raise Exception("exit", self.id)
+
 
 # no raising
 try:

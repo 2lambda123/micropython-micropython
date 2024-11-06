@@ -7,6 +7,7 @@ def gen():
         print("Caught")
     yield 2
 
+
 for i in gen():
     print(i)
 
@@ -17,6 +18,7 @@ def gen2():
     raise ValueError
     yield 2
     yield 3
+
 
 g = gen2()
 print(next(g))
@@ -41,6 +43,7 @@ def gen3():
         yield 3
     yield 4
     yield 5
+
 
 g = gen3()
 print(next(g))

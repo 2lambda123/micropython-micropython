@@ -1,26 +1,31 @@
 # test for type.__bases__ implementation
 
-if not hasattr(object, '__bases__'):
+if not hasattr(object, "__bases__"):
     print("SKIP")
     raise SystemExit
+
 
 class A:
     pass
 
+
 class B(object):
     pass
+
 
 class C(B):
     pass
 
+
 class D(C, A):
     pass
 
+
 # Check the attribute exists
-print(hasattr(A, '__bases__'))
-print(hasattr(B, '__bases__'))
-print(hasattr(C, '__bases__'))
-print(hasattr(D, '__bases__'))
+print(hasattr(A, "__bases__"))
+print(hasattr(B, "__bases__"))
+print(hasattr(C, "__bases__"))
+print(hasattr(D, "__bases__"))
 
 # Check it is always a tuple
 print(type(A.__bases__) == tuple)

@@ -23,4 +23,4 @@ print(x)
 try:
     [] + None
 except TypeError:
-    print('TypeError')
+    print("TypeError")

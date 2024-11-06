@@ -1,6 +1,7 @@
 # Tests that the correct nested exception handler is used when
 # throwing into a generator (previously failed on native emitter).
 
+
 def gen():
     try:
         yield 1
@@ -21,6 +22,7 @@ def gen():
         print(2)
     yield 9
 
+
 for i in range(1, 10):
     g = gen()
     try:
@@ -28,6 +30,6 @@ for i in range(1, 10):
             print(next(g))
         print(g.throw(ValueError))
     except ValueError:
-        print('ValueError')
+        print("ValueError")
     except StopIteration:
-        print('StopIteration')
+        print("StopIteration")

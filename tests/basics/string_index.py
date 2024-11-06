@@ -29,49 +29,49 @@ else:
 print("hello world".index("ll", 1, 4))
 print("hello world".index("ll", 1, 5))
 print("hello world".index("ll", -100))
-print("0000".index('0'))
-print("0000".index('0', 0))
-print("0000".index('0', 1))
-print("0000".index('0', 2))
-print("0000".index('0', 3))
+print("0000".index("0"))
+print("0000".index("0", 0))
+print("0000".index("0", 1))
+print("0000".index("0", 2))
+print("0000".index("0", 3))
 
 try:
-    print("0000".index('0', 4))
+    print("0000".index("0", 4))
 except ValueError:
     print("Raised ValueError")
 else:
     print("Did not raise ValueError")
 
 try:
-    print("0000".index('0', 5))
+    print("0000".index("0", 5))
 except ValueError:
     print("Raised ValueError")
 else:
     print("Did not raise ValueError")
 
 try:
-    print("0000".index('-1', 3))
+    print("0000".index("-1", 3))
 except ValueError:
     print("Raised ValueError")
 else:
     print("Did not raise ValueError")
 
 try:
-    print("0000".index('1', 3))
+    print("0000".index("1", 3))
 except ValueError:
     print("Raised ValueError")
 else:
     print("Did not raise ValueError")
 
 try:
-    print("0000".index('1', 4))
+    print("0000".index("1", 4))
 except ValueError:
     print("Raised ValueError")
 else:
     print("Did not raise ValueError")
 
 try:
-    print("0000".index('1', 5))
+    print("0000".index("1", 5))
 except ValueError:
     print("Raised ValueError")
 else:

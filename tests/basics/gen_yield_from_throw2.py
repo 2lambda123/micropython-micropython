@@ -1,17 +1,20 @@
 # outer generator ignores a thrown GeneratorExit (this is allowed)
 
+
 def gen():
     try:
         yield 123
     except GeneratorExit:
-        print('GeneratorExit')
+        print("GeneratorExit")
+
 
 def gen2():
     try:
         yield from gen()
     except GeneratorExit:
-        print('GeneratorExit outer')
+        print("GeneratorExit outer")
     yield 789
+
 
 # thrown a class
 g = gen2()

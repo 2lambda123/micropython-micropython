@@ -4,6 +4,7 @@ def gen():
         yield i
         i += 1
 
+
 g = gen()
 
 try:
@@ -41,6 +42,7 @@ def gen_next():
     next(g)
     yield 1
 
+
 g = gen_next()
 
 try:
@@ -54,6 +56,7 @@ def gen_pend_throw():
     g.pend_throw(ValueError())
     yield 1
 
+
 g = gen_pend_throw()
 
 try:
@@ -66,12 +69,14 @@ except Exception as e:
 class CancelledError(Exception):
     pass
 
+
 def gen_cancelled():
     for i in range(5):
         try:
             yield i
         except CancelledError:
-            print('ignore CancelledError')
+            print("ignore CancelledError")
+
 
 g = gen_cancelled()
 print(next(g))

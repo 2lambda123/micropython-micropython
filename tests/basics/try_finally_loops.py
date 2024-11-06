@@ -3,20 +3,20 @@ while True:
     try:
         break
     finally:
-        print('finally 1')
+        print("finally 1")
 
 
 for i in [1, 5, 10]:
     try:
         continue
     finally:
-        print('finally 2')
+        print("finally 2")
 
 for i in range(3):
     try:
         continue
     finally:
-        print('finally 3')
+        print("finally 3")
 
 # Multi-level
 for i in range(4):
@@ -27,12 +27,12 @@ for i in range(4):
                 try:
                     break
                 finally:
-                    print('finally 1')
+                    print("finally 1")
             finally:
-                print('finally 2')
-        print('here')
+                print("finally 2")
+        print("here")
     finally:
-        print('finnaly 3')
+        print("finnaly 3")
 
 # break from within try-finally, within for-loop
 for i in [1]:
@@ -40,7 +40,7 @@ for i in [1]:
         print(i)
         break
     finally:
-        print('finally 4')
+        print("finally 4")
 
 # Test unwind-jump where there is nothing in the body of the try or finally.
 # This checks that the bytecode emitter allocates enough stack for the unwind.
@@ -49,6 +49,7 @@ for i in [1]:
         break
     finally:
         pass
+
 
 # The following test checks that the globals dict is valid after a call to a
 # function that has an unwind jump.
@@ -60,9 +61,13 @@ def f():
             break
         finally:
             pass
+
+
 def g():
     global global_var
     f()
     print(global_var)
-global_var = 'global'
+
+
+global_var = "global"
 g()

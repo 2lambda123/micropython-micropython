@@ -1,5 +1,4 @@
 class A:
-
     var = 132
 
     def __init__(self):
@@ -16,14 +15,15 @@ print(hasattr(a, "meth"))
 print(hasattr(a, "_none_such"))
 print(hasattr(list, "foo"))
 
-class C:
 
+class C:
     def __getattr__(self, attr):
         if attr == "exists":
             return attr
         elif attr == "raise":
             raise Exception(123)
         raise AttributeError
+
 
 c = C()
 print(hasattr(c, "exists"))
@@ -36,11 +36,11 @@ except Exception as er:
     print(er)
 
 try:
-    hasattr(1, b'123')
+    hasattr(1, b"123")
 except TypeError:
-    print('TypeError')
+    print("TypeError")
 
 try:
     hasattr(1, 123)
 except TypeError:
-    print('TypeError')
+    print("TypeError")

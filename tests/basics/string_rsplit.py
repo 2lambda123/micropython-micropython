@@ -1,29 +1,29 @@
 # default separator (whitespace)
 print("a b".rsplit())
-#print("   a   b    ".rsplit(None))
-#print("   a   b    ".rsplit(None, 1))
-#print("   a   b    ".rsplit(None, 2))
-#print("   a   b  c  ".rsplit(None, 1))
-#print("   a   b  c  ".rsplit(None, 0))
-#print("   a   b  c  ".rsplit(None, -1))
+# print("   a   b    ".rsplit(None))
+# print("   a   b    ".rsplit(None, 1))
+# print("   a   b    ".rsplit(None, 2))
+# print("   a   b  c  ".rsplit(None, 1))
+# print("   a   b  c  ".rsplit(None, 0))
+# print("   a   b  c  ".rsplit(None, -1))
 
 # empty separator should fail (this actually delegates to .split())
 try:
-    "abc".rsplit('')
+    "abc".rsplit("")
 except ValueError:
     print("ValueError")
 
 # empty separator should fail (error handled in .rsplit())
 try:
-    'a a a a'.rsplit('', 5)
+    "a a a a".rsplit("", 5)
 except ValueError:
-    print('ValueError')
+    print("ValueError")
 
 # bad separator type
 try:
-    'a a a a'.rsplit(1)
+    "a a a a".rsplit(1)
 except TypeError:
-    print('TypeError')
+    print("TypeError")
 
 # non-empty separator
 print("abc".rsplit("a"))
@@ -54,5 +54,5 @@ print("/*10/*11/*12/*".rsplit("/*", 5))
 print(b"abcabc".rsplit(b"bc", 2))
 
 # negative "maxsplit" should delegate to .split()
-print('abaca'.rsplit('a', -1))
-print('abaca'.rsplit('a', -2))
+print("abaca".rsplit("a", -1))
+print("abaca".rsplit("a", -2))

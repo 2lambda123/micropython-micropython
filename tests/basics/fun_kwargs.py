@@ -1,6 +1,7 @@
 def f1(a):
     print(a)
 
+
 f1(123)
 f1(a=123)
 try:
@@ -8,8 +9,10 @@ try:
 except TypeError:
     print("TypeError")
 
+
 def f2(a, b):
     print(a, b)
+
 
 f2(1, 2)
 f2(a=3, b=4)
@@ -19,6 +22,7 @@ try:
     f2(9, a=10)
 except TypeError:
     print("TypeError")
+
 
 def f3(a, b, *args):
     print(a, b, args)

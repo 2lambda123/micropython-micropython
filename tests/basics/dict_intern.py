@@ -12,4 +12,4 @@ print(k == k2)
 print(k2 in di)
 
 # lookup non-interned string
-print("".join(['k', 'e', 'y', '1']) in di)
+print("".join(["k", "e", "y", "1"]) in di)

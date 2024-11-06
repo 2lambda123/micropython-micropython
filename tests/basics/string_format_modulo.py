@@ -1,5 +1,5 @@
 try:
-    '' % ()
+    "" % ()
 except TypeError:
     print("SKIP")
     raise SystemExit
@@ -13,10 +13,13 @@ print("=%s=" % [1, 2])
 print("=%s=" % "str")
 print("=%r=" % "str")
 
+
 # test calling __int__
 class A:
     def __int__(self):
         return 123
+
+
 print("%d" % A())
 
 try:
@@ -42,18 +45,18 @@ print("%r" % True)
 print("%r" % 1)
 
 print("%c" % 48)
-print("%c" % 'a')
-print("%10s" % 'abc')
-print("%-10s" % 'abc')
+print("%c" % "a")
+print("%10s" % "abc")
+print("%-10s" % "abc")
 
-print('%c' % False)
-print('%c' % True)
+print("%c" % False)
+print("%c" % True)
 
 # Should be able to print dicts; in this case they aren't used
 # to lookup keywords in formats like %(foo)s
-print('%s' % {})      # dict treated as the single (positional) arg to %
-print('%s' % ({},))   # dict is the first (and only) arg in the positional arg tuple
-print('foo' % {})     # no error, dict treated as an empty map of named args
+print("%s" % {})  # dict treated as the single (positional) arg to %
+print("%s" % ({},))  # dict is the first (and only) arg in the positional arg tuple
+print("foo" % {})  # no error, dict treated as an empty map of named args
 
 # Cases when "*" used and there's not enough values total
 try:
@@ -83,40 +86,40 @@ except TypeError:
 
 # When using %(foo)s format the single argument must be a dict
 try:
-    '%(foo)s' % 1
+    "%(foo)s" % 1
 except TypeError:
-    print('TypeError')
+    print("TypeError")
 try:
-    '%(foo)s' % ({},)
+    "%(foo)s" % ({},)
 except TypeError:
-    print('TypeError')
+    print("TypeError")
 
 try:
-    '%(a' % {'a':1}
+    "%(a" % {"a": 1}
 except ValueError:
-    print('ValueError')
+    print("ValueError")
 
 try:
-    '%.*d %.*d' % (20, 5)
+    "%.*d %.*d" % (20, 5)
 except TypeError:
-    print('TypeError')
+    print("TypeError")
 
 try:
-    a = '%*' % 1
-except (ValueError):
-    print('ValueError')
+    a = "%*" % 1
+except ValueError:
+    print("ValueError")
 
 try:
-    '%c' % 'aa'
+    "%c" % "aa"
 except TypeError:
-    print('TypeError')
+    print("TypeError")
 
 try:
-    '%l' % 1
+    "%l" % 1
 except ValueError:
-    print('ValueError')
+    print("ValueError")
 
 try:
-    'a%' % 1
+    "a%" % 1
 except ValueError:
-    print('ValueError')
+    print("ValueError")

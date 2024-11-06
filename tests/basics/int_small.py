@@ -35,30 +35,30 @@ print(+3)
 print(-3)
 print(~3)
 
-a = 0x3fffff
+a = 0x3FFFFF
 print(a)
 a *= 0x10
 print(a)
 a *= 0x10
 print(a)
-a += 0xff
+a += 0xFF
 print(a)
 # This would overflow
-#a += 1
+# a += 1
 
-a = -0x3fffff
+a = -0x3FFFFF
 print(a)
 a *= 0x10
 print(a)
 a *= 0x10
 print(a)
-a -= 0xff
+a -= 0xFF
 print(a)
 # This still doesn't overflow
 a -= 1
 print(a)
 # This would overflow
-#a -= 1
+# a -= 1
 
 # negative shifts are not allowed
 try:

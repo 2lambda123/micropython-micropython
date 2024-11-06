@@ -1,6 +1,7 @@
 # Testcase for break in a for [within bunch of other code]
 # https://github.com/micropython/micropython/issues/635
 
+
 def foo():
     seq = [1, 2, 3]
     v = 100
@@ -12,7 +13,9 @@ def foo():
                 break
         i -= 1
 
+
 foo()
+
 
 # break from within nested for loop
 def bar():
@@ -23,5 +26,6 @@ def bar():
             print(e1, e2)
             if e2 == 2:
                 break
+
 
 bar()

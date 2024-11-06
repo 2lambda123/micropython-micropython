@@ -1,10 +1,14 @@
 # closures
 
+
 def f(x):
     y = 2 * x
+
     def g(z):
         return y + z
+
     return g
+
 
 print(f(1)(1))
 

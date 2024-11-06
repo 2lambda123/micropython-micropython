@@ -1,16 +1,20 @@
 # test super with multiple inheritance
 
+
 class A:
     def foo(self):
-        print('A.foo')
+        print("A.foo")
+
 
 class B:
     def foo(self):
-        print('B.foo')
+        print("B.foo")
+
 
 class C(A, B):
     def foo(self):
-        print('C.foo')
+        print("C.foo")
         super().foo()
+
 
 C().foo()

@@ -33,7 +33,7 @@ try:
     finally:
         print(4)
 except:
-    print('caught')
+    print("caught")
 
 # nested within outer try
 try:

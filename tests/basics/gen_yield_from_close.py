@@ -4,11 +4,13 @@ def gen():
     yield 3
     yield 4
 
+
 def gen2():
     yield -1
     print((yield from gen()))
     yield 10
     yield 11
+
 
 g = gen2()
 print(next(g))
@@ -33,6 +35,7 @@ def gen3():
     yield 3
     yield 4
 
+
 def gen4():
     yield -1
     try:
@@ -42,6 +45,7 @@ def gen4():
         raise
     yield 10
     yield 11
+
 
 g = gen4()
 print(next(g))
@@ -66,6 +70,7 @@ def gen5():
     yield 3
     yield 4
 
+
 def gen6():
     yield -1
     try:
@@ -75,6 +80,7 @@ def gen6():
         raise
     yield 10
     yield 11
+
 
 g = gen6()
 print(next(g))
@@ -86,6 +92,7 @@ try:
 except StopIteration:
     print("StopIteration")
 
+
 # case where generator ignores the close request and yields instead
 def gen7():
     try:
@@ -93,31 +100,42 @@ def gen7():
     except GeneratorExit:
         yield 456
 
+
 g = gen7()
 print(next(g))
 try:
     g.close()
 except RuntimeError:
-    print('RuntimeError')
+    print("RuntimeError")
+
 
 # case where close is propagated up to a built-in iterator
 def gen8():
     g = range(2)
     yield from g
+
+
 g = gen8()
 print(next(g))
 g.close()
+
 
 # case with a user-defined close method
 class Iter:
     def __iter__(self):
         return self
+
     def __next__(self):
         return 1
+
     def close(self):
-        print('close')
+        print("close")
+
+
 def gen9():
     yield from Iter()
+
+
 g = gen9()
 print(next(g))
 g.close()

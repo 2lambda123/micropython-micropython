@@ -3,7 +3,7 @@
 f = lambda x=1: x
 print(f(), f(2), f(x=3))
 
-y = 'y'
+y = "y"
 f = lambda x=y: x
 print(f())
 

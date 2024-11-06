@@ -14,19 +14,19 @@ print(gc.isenabled())
 
 gc.collect()
 
-if hasattr(gc, 'mem_free'):
+if hasattr(gc, "mem_free"):
     # uPy has these extra functions
     # just test they execute and return an int
     assert type(gc.mem_free()) is int
     assert type(gc.mem_alloc()) is int
 
-if hasattr(gc, 'threshold'):
+if hasattr(gc, "threshold"):
     # uPy has this extra function
     # check execution and returns
-    assert(gc.threshold(1) is None)
-    assert(gc.threshold() == 0)
-    assert(gc.threshold(-1) is None)
-    assert(gc.threshold() == -1)
+    assert gc.threshold(1) is None
+    assert gc.threshold() == 0
+    assert gc.threshold(-1) is None
+    assert gc.threshold() == -1
 
     # Setting a low threshold should trigger collection at the list alloc
     gc.threshold(1)

@@ -26,5 +26,5 @@ if [0]:
 
 if not {}:
     print("Empty dict")
-if {0:0}:
+if {0: 0}:
     print("Non-empty dict")

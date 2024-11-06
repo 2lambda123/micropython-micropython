@@ -1,9 +1,11 @@
 l = [1, 2, 3, 4]
 s = set(l)
-outs = [s.difference(),
-        s.difference({1}),
-        s.difference({1}, [1, 2]),
-        s.difference({1}, {1, 2}, {2, 3})]
+outs = [
+    s.difference(),
+    s.difference({1}),
+    s.difference({1}, [1, 2]),
+    s.difference({1}, {1, 2}, {2, 3}),
+]
 for out in outs:
     print(sorted(out))
 

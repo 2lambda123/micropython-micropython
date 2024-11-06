@@ -1,25 +1,26 @@
 def f(x):
-    print('a')
+    print("a")
     y = x
-    print('b')
+    print("b")
     while y > 0:
-        print('c')
+        print("c")
         y -= 1
-        print('d')
+        print("d")
         yield y
-        print('e')
-    print('f')
+        print("e")
+    print("f")
     return None
+
 
 for val in f(3):
     print(val)
 
-#gen = f(3)
-#print(gen)
-#print(gen.__next__())
-#print(gen.__next__())
-#print(gen.__next__())
-#print(gen.__next__())
+# gen = f(3)
+# print(gen)
+# print(gen.__next__())
+# print(gen.__next__())
+# print(gen.__next__())
+# print(gen.__next__())
 
 # test printing, but only the first chars that match CPython
 print(repr(f(0))[0:17])

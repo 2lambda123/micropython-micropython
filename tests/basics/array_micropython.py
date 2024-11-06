@@ -6,12 +6,12 @@ except ImportError:
     raise SystemExit
 
 # arrays of objects
-a = array.array('O')
+a = array.array("O")
 a.append(1)
 print(a[0])
 
 # arrays of pointers
-a = array.array('P')
+a = array.array("P")
 a.append(1)
 print(a[0])
 
@@ -23,6 +23,6 @@ for a in typecodes:
             continue
         try:
             array.array(a) == array.array(b)
-            print('FAIL')
+            print("FAIL")
         except NotImplementedError:
             pass

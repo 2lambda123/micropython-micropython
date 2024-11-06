@@ -13,6 +13,7 @@ for i in range(len(m)):
 # reclaim b, but hopefully not the buffer
 b = None
 import gc
+
 gc.collect()
 
 # allocate lots of memory

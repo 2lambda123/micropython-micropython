@@ -8,9 +8,9 @@ except NameError:
 
 # completely empty string
 # uPy and CPy differ for this case
-#try:
+# try:
 #    compile("", "stdin", "single")
-#except SyntaxError:
+# except SyntaxError:
 #    print("SyntaxError")
 try:
     compile("", "stdin", "eval")

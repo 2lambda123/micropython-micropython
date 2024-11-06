@@ -3,24 +3,25 @@ class foo(object):
         self.x = value
 
     def __eq__(self, other):
-        print('eq')
+        print("eq")
         return self.x == other.x
 
     def __lt__(self, other):
-        print('lt')
+        print("lt")
         return self.x < other.x
 
     def __gt__(self, other):
-        print('gt')
+        print("gt")
         return self.x > other.x
 
     def __le__(self, other):
-        print('le')
+        print("le")
         return self.x <= other.x
 
     def __ge__(self, other):
-        print('ge')
+        print("ge")
         return self.x >= other.x
+
 
 for i in range(3):
     for j in range(3):

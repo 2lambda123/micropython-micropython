@@ -4,6 +4,7 @@ def f():
         n = yield n + 1
         print(n)
 
+
 g = f()
 try:
     g.send(1)
@@ -22,6 +23,7 @@ def f2():
         yield
     print("returning 1")
     print("returning 2")
+
 
 g = f2()
 g.send(None)

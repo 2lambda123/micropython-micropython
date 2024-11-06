@@ -6,8 +6,10 @@ except ImportError:
     print("SKIP")
     raise SystemExit
 
-class A():
+
+class A:
     pass
+
 
 # pack and unpack objects
 o = A()
@@ -16,7 +18,7 @@ o2 = struct.unpack("<O", s)
 print(o is o2[0])
 
 # pack can accept less arguments than required for the format spec
-print(struct.pack('<2I', 1))
+print(struct.pack("<2I", 1))
 
 # pack and unpack pointer to a string
 # This requires uctypes to get the address of the string and instead of
@@ -24,9 +26,10 @@ print(struct.pack('<2I', 1))
 # if the import fails.
 try:
     import uctypes
-    o = uctypes.addressof('abc')
+
+    o = uctypes.addressof("abc")
     s = struct.pack("<S", o)
     o2 = struct.unpack("<S", s)
-    assert o2[0] == 'abc'
+    assert o2[0] == "abc"
 except ImportError:
     pass
