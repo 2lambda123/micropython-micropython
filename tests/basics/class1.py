@@ -1,5 +1,6 @@
 # basic class
 
+
 def go():
     class C:
         def f():
@@ -24,5 +25,6 @@ def go():
 
     C.set(o, 4)
     C.print(o)
+
 
 go()

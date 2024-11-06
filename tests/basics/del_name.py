@@ -9,9 +9,10 @@ except NameError:
     print("NameError")
 try:
     del x
-except: # NameError:
+except:  # NameError:
     # FIXME uPy returns KeyError for this
     print("NameError")
+
 
 class C:
     def f():

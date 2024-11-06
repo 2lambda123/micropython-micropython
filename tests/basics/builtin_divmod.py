@@ -10,6 +10,6 @@ except ZeroDivisionError:
     print("ZeroDivisionError")
 
 try:
-    divmod('a', 'b')
+    divmod("a", "b")
 except TypeError:
     print("TypeError")

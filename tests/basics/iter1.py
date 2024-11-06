@@ -3,23 +3,30 @@
 # this class is not iterable
 class NotIterable:
     pass
+
+
 try:
     for i in NotIterable():
         pass
 except TypeError:
-    print('TypeError')
+    print("TypeError")
+
 
 # this class has no __next__ implementation
 class NotIterable:
     def __iter__(self):
         return self
+
+
 try:
     print(all(NotIterable()))
 except TypeError:
-    print('TypeError')
+    print("TypeError")
+
 
 class MyStopIteration(StopIteration):
     pass
+
 
 class myiter:
     def __init__(self, i):
@@ -40,12 +47,13 @@ class myiter:
             raise TypeError
         elif self.i == 30:
             # raise a user-defined stop iteration
-            print('raising MyStopIteration')
+            print("raising MyStopIteration")
             raise MyStopIteration
         else:
             # return the next value
             self.i -= 1
             return self.i
+
 
 for i in myiter(5):
     print(i)
@@ -57,14 +65,14 @@ try:
     for i in myiter(22):
         print(i)
 except TypeError:
-    print('raised TypeError')
+    print("raised TypeError")
 
 try:
     for i in myiter(5):
         print(i)
         raise StopIteration
 except StopIteration:
-    print('raised StopIteration')
+    print("raised StopIteration")
 
 for i in myiter(32):
     print(i)
@@ -76,4 +84,4 @@ print(tuple(myiter(32)))
 try:
     tuple(myiter(22))
 except TypeError:
-    print('raised TypeError')
+    print("raised TypeError")

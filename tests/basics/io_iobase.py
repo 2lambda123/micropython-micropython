@@ -1,15 +1,17 @@
 import io
+
 try:
     io.IOBase
 except AttributeError:
-    print('SKIP')
+    print("SKIP")
     raise SystemExit
 
 
 class MyIO(io.IOBase):
     def write(self, buf):
         # CPython and uPy pass in different types for buf (str vs bytearray)
-        print('write', len(buf))
+        print("write", len(buf))
         return len(buf)
 
-print('test', file=MyIO())
+
+print("test", file=MyIO())

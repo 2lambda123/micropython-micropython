@@ -5,12 +5,14 @@ class C1:
     def __str__(self):
         return "str<C1 {}>".format(self.value)
 
+
 class C2:
     def __init__(self, value):
         self.value = value
 
     def __repr__(self):
         return "repr<C2 {}>".format(self.value)
+
 
 class C3:
     def __init__(self, value):
@@ -21,6 +23,7 @@ class C3:
 
     def __repr__(self):
         return "repr<C3 {}>".format(self.value)
+
 
 c1 = C1(1)
 print(c1)

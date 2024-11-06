@@ -4,6 +4,7 @@ def func1():
     finally:
         print("finally 1")
 
+
 print(func1())
 
 
@@ -13,6 +14,7 @@ def func2():
     finally:
         print("finally 2")
 
+
 def func3():
     try:
         s = func2()
@@ -20,7 +22,9 @@ def func3():
     finally:
         print("finally 3")
 
+
 print(func3())
+
 
 # for loop within try-finally
 def f():
@@ -28,8 +32,11 @@ def f():
         for i in [1, 2]:
             return i
     finally:
-        print('finally')
+        print("finally")
+
+
 print(f())
+
 
 # multiple for loops within try-finally
 def f():
@@ -38,8 +45,11 @@ def f():
             for j in [3, 4]:
                 return (i, j)
     finally:
-        print('finally')
+        print("finally")
+
+
 print(f())
+
 
 # multiple for loops and nested try-finally's
 def f():
@@ -51,10 +61,13 @@ def f():
                         for l in [7, 8]:
                             return (i, j, k, l)
                 finally:
-                    print('finally 2')
+                    print("finally 2")
     finally:
-        print('finally 1')
+        print("finally 1")
+
+
 print(f())
+
 
 # multiple for loops that are optimised, and nested try-finally's
 def f():
@@ -66,10 +79,13 @@ def f():
                         for l in range(7, 9):
                             return (i, j, k, l)
                 finally:
-                    print('finally 2')
+                    print("finally 2")
     finally:
-        print('finally 1')
+        print("finally 1")
+
+
 print(f())
+
 
 # the finally block uses a lot of Python stack and then a local is accessed
 # (tests that the use of the stack doesn't clobber the local)
@@ -79,4 +95,6 @@ def f(x):
     finally:
         print(2, 3, 4, 5, 6)
         print(x)
+
+
 print(f(1))

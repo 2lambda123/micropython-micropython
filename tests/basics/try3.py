@@ -1,5 +1,6 @@
 # nested exceptions
 
+
 def f():
     try:
         foo()
@@ -10,6 +11,7 @@ def f():
         except:
             print("except 2")
         bar()
+
 
 try:
     f()

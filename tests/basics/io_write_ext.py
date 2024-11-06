@@ -5,7 +5,7 @@ import io
 try:
     io.BytesIO
 except AttributeError:
-    print('SKIP')
+    print("SKIP")
     raise SystemExit
 
 buf = io.BytesIO()

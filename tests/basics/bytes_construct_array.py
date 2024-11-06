@@ -6,5 +6,5 @@ except ImportError:
     raise SystemExit
 
 # arrays
-print(bytes(array('b', [1, 2])))
-print(bytes(array('h', [0x101, 0x202])))
+print(bytes(array("b", [1, 2])))
+print(bytes(array("h", [0x101, 0x202])))

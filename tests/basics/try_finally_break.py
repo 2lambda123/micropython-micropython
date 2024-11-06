@@ -12,25 +12,31 @@ def f():
             print(3)
         print(4)
     print(5)
+
+
 f()
+
 
 # where the finally swallows an exception
 def f():
     lst = [1, 2, 3]
     for x in lst:
-        print('a', x)
+        print("a", x)
         try:
             raise Exception
         finally:
             print(1)
             break
-        print('b', x)
+        print("b", x)
+
+
 f()
+
 
 # basic nested finally with break in inner finally
 def f():
     for i in range(2):
-        print('iter', i)
+        print("iter", i)
         try:
             raise TypeError
         finally:
@@ -39,7 +45,10 @@ def f():
                 raise ValueError
             finally:
                 break
+
+
 print(f())
+
 
 # similar to above but more nesting
 def f():
@@ -56,7 +65,10 @@ def f():
                     pass
                 finally:
                     break
+
+
 print(f())
+
 
 # lots of nesting
 def f():
@@ -73,7 +85,10 @@ def f():
                     raise Exception
                 finally:
                     break
+
+
 print(f())
+
 
 # basic case combined with try-else
 def f(arg):
@@ -94,6 +109,8 @@ def f(arg):
             print(5)
         print(6)
     print(7)
-f(0) # no exception, else should execute
-f(1) # exception caught, else should be skipped
-f(2) # exception not caught, finally swallows exception, else should be skipped
+
+
+f(0)  # no exception, else should execute
+f(1)  # exception caught, else should be skipped
+f(2)  # exception not caught, finally swallows exception, else should be skipped

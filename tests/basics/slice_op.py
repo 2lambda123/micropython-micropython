@@ -14,4 +14,4 @@ except:
 try:
     {}[:] = {}
 except TypeError:
-    print('TypeError')
+    print("TypeError")

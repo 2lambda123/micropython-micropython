@@ -27,9 +27,10 @@ try:
     try:
         raise Exception
     except (RuntimeError, SyntaxError):
-        print('except 2')
+        print("except 2")
 except Exception:
-    print('except 1')
+    print("except 1")
+
 
 # Check that exceptions across function boundaries work as expected
 def func1():
@@ -39,11 +40,13 @@ def func1():
     except NameError:
         print("except func1")
 
+
 def func2():
     try:
         print("try func2")
         foo()
     except TypeError:
         print("except func2")
+
 
 func1()

@@ -1,7 +1,7 @@
 # This test requires CPython3.5
 
 try:
-    b'' % ()
+    b"" % ()
 except TypeError:
     print("SKIP")
     raise SystemExit

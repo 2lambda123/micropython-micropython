@@ -18,19 +18,19 @@ while -1:
     break
 
 while False:
-    print('a')
+    print("a")
 else:
-    print('b')
+    print("b")
 
 while True:
-    print('a')
+    print("a")
     break
 
 while not False:
-    print('a')
+    print("a")
     break
 
 while not True:
-    print('a')
+    print("a")
 else:
-    print('b')
+    print("b")

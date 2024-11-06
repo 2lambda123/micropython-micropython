@@ -11,8 +11,9 @@ def print_ret(x):
     print(x)
     return x
 
+
 # test evaluation order of dictionary key/value pair (in 3.4 it's backwards)
-{print_ret(1):print_ret(2)}
+{print_ret(1): print_ret(2)}
 
 
 # from basics/syntaxerror.py
@@ -23,13 +24,14 @@ def test_syntax(code):
         print("SyntaxError")
 
 
-test_syntax("f(**a, b)") # can't have positional after **
-test_syntax("() = []") # can't assign to empty tuple (in 3.6 we can)
-test_syntax("del ()") # can't delete empty tuple (in 3.6 we can)
+test_syntax("f(**a, b)")  # can't have positional after **
+test_syntax("() = []")  # can't assign to empty tuple (in 3.6 we can)
+test_syntax("del ()")  # can't delete empty tuple (in 3.6 we can)
 
 # from basics/sys1.py
 # uPy prints version 3.4
 import sys
+
 print(sys.version[:3])
 print(sys.version_info[0], sys.version_info[1])
 

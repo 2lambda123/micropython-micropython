@@ -11,7 +11,10 @@ def f():
             raise ValueError
         finally:
             return 42
+
+
 print(f())
+
 
 # similar to above but more nesting
 def f():
@@ -27,7 +30,10 @@ def f():
                 pass
             finally:
                 return 42
+
+
 print(f())
+
 
 # similar to above but even more nesting
 def f():
@@ -44,7 +50,10 @@ def f():
             finally:
                 print(3)
                 return 42
+
+
 print(f())
+
 
 # upon return some try's are active, some finally's are active, some inactive
 def f():
@@ -56,7 +65,10 @@ def f():
             return 42
     finally:
         print(1)
+
+
 print(f())
+
 
 # same as above but raise instead of pass
 def f():
@@ -68,7 +80,10 @@ def f():
             return 42
     finally:
         print(1)
+
+
 print(f())
+
 
 # upon return exception stack holds: active finally, inactive finally, active finally
 def f():
@@ -84,7 +99,10 @@ def f():
                 return 42
         finally:
             print(2)
+
+
 print(f())
+
 
 # same as above but raise instead of pass in innermost try block
 def f():
@@ -100,4 +118,6 @@ def f():
                 return 42
         finally:
             print(2)
+
+
 print(f())

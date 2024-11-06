@@ -12,6 +12,8 @@ def foo(x):
                     finally:
                         return 42
             finally:
-                print('return')
+                print("return")
                 return 43
+
+
 print(foo(4))

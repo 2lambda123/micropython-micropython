@@ -7,4 +7,4 @@ except ImportError:
     raise SystemExit
 
 # raw copy from bytes, bytearray
-print(array('h', b'12'))
+print(array("h", b"12"))

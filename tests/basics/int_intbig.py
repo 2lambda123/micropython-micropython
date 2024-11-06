@@ -1,6 +1,6 @@
 # This tests long ints for 32-bit machine
 
-a = 0x1ffffffff
+a = 0x1FFFFFFFF
 b = 0x100000000
 print(a)
 print(b)
@@ -8,7 +8,7 @@ print(a + b)
 print(a - b)
 print(b - a)
 # overflows long long implementation
-#print(a * b)
+# print(a * b)
 print(a // b)
 print(a % b)
 print("&", a & b)
@@ -39,7 +39,7 @@ a >>= 1
 print(a)
 
 # Test referential integrity of long ints
-a = 0x1ffffffff
+a = 0x1FFFFFFFF
 b = a
 a += 1
 print(a)
@@ -47,7 +47,7 @@ print(b)
 
 # Bitwise ops on 64-bit
 
-a = 0x1ffffffffffffffff
+a = 0x1FFFFFFFFFFFFFFFF
 b = 0x10000000000000000
 print("&", a & b)
 print(a | b)

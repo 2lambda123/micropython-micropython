@@ -26,6 +26,7 @@ def f():
         # This should raise original ValueError, not the most recently occurred AttributeError
         raise
 
+
 try:
     f()
 except ValueError as e:

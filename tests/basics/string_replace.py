@@ -14,11 +14,11 @@ print("AB".replace("", "1"))
 print("AB".replace("", "12"))
 
 try:
-    'abc'.replace(1, 2)
+    "abc".replace(1, 2)
 except TypeError:
-    print('TypeError')
+    print("TypeError")
 
 try:
-    'abc'.replace('1', 2)
+    "abc".replace("1", 2)
 except TypeError:
-    print('TypeError')
+    print("TypeError")

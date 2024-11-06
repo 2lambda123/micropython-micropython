@@ -1,5 +1,4 @@
 class A:
-
     var = 132
 
     def __init__(self):
@@ -17,6 +16,7 @@ print(getattr(a, "_none_such", 123))
 print(getattr(list, "foo", 456))
 print(getattr(a, "va" + "r2"))
 
+
 # test a class that defines __getattr__ and may raise AttributeError
 class B:
     def __getattr__(self, attr):
@@ -24,6 +24,8 @@ class B:
             return attr
         else:
             raise AttributeError
+
+
 b = B()
 print(getattr(b, "a"))
 print(getattr(b, "a", "default"))

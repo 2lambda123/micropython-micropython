@@ -16,4 +16,6 @@ def foo(x):
                 finally:
                     print(x, i, j, 4)
                     break
+
+
 print(foo(4))

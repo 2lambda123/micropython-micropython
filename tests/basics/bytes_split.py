@@ -9,7 +9,7 @@ print(b"   a   b  c  ".split(None, -1))
 
 # empty separator should fail
 try:
-    b"abc".split(b'')
+    b"abc".split(b"")
 except ValueError:
     print("ValueError")
 

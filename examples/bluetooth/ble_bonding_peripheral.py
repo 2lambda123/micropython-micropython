@@ -11,7 +11,6 @@
 # https://github.com/micropython/micropython-lib/tree/master/micropython/bluetooth/aioble
 
 import bluetooth
-import random
 import struct
 import time
 import json
@@ -19,6 +18,7 @@ import binascii
 from ble_advertising import advertising_payload
 
 from micropython import const
+import secrets
 
 _IRQ_CENTRAL_CONNECT = const(1)
 _IRQ_CENTRAL_DISCONNECT = const(2)
@@ -191,7 +191,7 @@ def demo():
         i = (i + 1) % 10
         temp.set_temperature(t, notify=i == 0, indicate=False)
         # Random walk the temperature.
-        t += random.uniform(-0.5, 0.5)
+        t += secrets.SystemRandom().uniform(-0.5, 0.5)
         time.sleep_ms(1000)
 
 

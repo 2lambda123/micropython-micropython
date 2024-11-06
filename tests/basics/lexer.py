@@ -43,27 +43,32 @@ print(eval("'123'\\\n'456'"))
 print(eval("'123'\\\r\n'456'"))
 
 # backslash used to escape a line-break in a string
-print('a\
-b')
+print(
+    "a\
+b"
+)
+
 
 # lots of indentation
 def a(x):
- if x:
-  if x:
-   if x:
     if x:
-     if x:
-      if x:
-       if x:
         if x:
-         if x:
-          if x:
-           if x:
             if x:
-             if x:
-              if x:
-               if x:
-                print(x)
+                if x:
+                    if x:
+                        if x:
+                            if x:
+                                if x:
+                                    if x:
+                                        if x:
+                                            if x:
+                                                if x:
+                                                    if x:
+                                                        if x:
+                                                            if x:
+                                                                print(x)
+
+
 a(1)
 
 # badly formed hex escape sequences

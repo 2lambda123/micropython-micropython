@@ -1,7 +1,6 @@
-class Cud():
-
+class Cud:
     def __init__(self):
-        #print("__init__ called")
+        # print("__init__ called")
         pass
 
     def __repr__(self):
@@ -89,7 +88,8 @@ class Cud():
         return self
 
     def __dir__(self):
-        return ['a', 'b', 'c']
+        return ["a", "b", "c"]
+
 
 cud1 = Cud()
 cud2 = Cud()
@@ -111,7 +111,7 @@ cud2 // cud1
 cud1 += cud2
 cud1 -= cud2
 cud1 % 2
-cud1 ** 2
+cud1**2
 cud1 | cud2
 cud1 & cud2
 cud1 ^ cud2
@@ -122,4 +122,4 @@ cud1 >> 1
 print(dir(cud1))
 
 # test that dir() does not delegate to __dir__ for the type
-print('a' in dir(Cud))
+print("a" in dir(Cud))

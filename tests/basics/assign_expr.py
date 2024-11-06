@@ -12,6 +12,7 @@ x = 1
 print(x, x := 5, x)
 print(x)
 
+
 # Test "while" with assignment expression as conditional, assigning to a new local.
 # The while conditional is compiled after the while body, so this tests how the
 # compiler handles the case of an unbound local being compiled before it is assigned.

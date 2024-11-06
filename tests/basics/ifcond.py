@@ -34,34 +34,36 @@ else:
     print(17)
 
 if not False:
-    print('a')
+    print("a")
 
 if not True:
-    print('a')
+    print("a")
 else:
-    print('b')
+    print("b")
 
 if False:
-    print('a')
+    print("a")
 else:
-    print('b')
+    print("b")
 
 if True:
-    print('a')
+    print("a")
 
 if (1,):
-    print('a')
+    print("a")
 
 if not (1,):
-    print('a')
+    print("a")
 else:
-    print('b')
+    print("b")
 
 # test evaluation of the if-condition with tuples as arguments
 # non-constant tuples should be evaluated even though they will evaluate to true
 
+
 def f(x):
     print("f", x)
+
 
 if (f(1),):
     print(18)
@@ -72,6 +74,7 @@ if (f(2), f(3)):
 # test if-conditions within a function
 
 f2 = 0
+
 
 def f(t1, t2, f1):
     if False:
@@ -86,13 +89,13 @@ def f(t1, t2, f1):
         print(1)
     if t1 and t2:
         print(1)
-    if (t1 and t2): # parsed differently to above
+    if t1 and t2:  # parsed differently to above
         print(1)
     if not (t1 and f1):
         print(1)
     if t1 or t2:
         print(1)
-    if (t1 or t2): # parse differently to above
+    if t1 or t2:  # parse differently to above
         print(1)
     if f1 or t1:
         print(1)
@@ -102,5 +105,6 @@ def f(t1, t2, f1):
         print(1)
     if (f1 or t1) and (f2 or t2):
         print(1)
+
 
 f(True, 1, False)

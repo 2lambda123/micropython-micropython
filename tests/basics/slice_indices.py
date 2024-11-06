@@ -5,6 +5,7 @@ class A:
     def __getitem__(self, idx):
         return idx
 
+
 # Make sure that we have slices and .indices()
 try:
     A()[2:5].indices(10)

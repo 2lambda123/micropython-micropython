@@ -10,4 +10,4 @@ print(len(x))
 
 f = len
 print(f({}))
-print(f({1:2, 3:4}))
+print(f({1: 2, 3: 4}))

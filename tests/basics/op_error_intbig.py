@@ -1,5 +1,6 @@
 # test errors from bad operations (unary, binary, etc)
 
+
 def test_exc(code, exc):
     try:
         exec(code)
@@ -9,8 +10,9 @@ def test_exc(code, exc):
     except:
         print("wrong exception")
 
+
 # object with buffer protocol needed on rhs
 try:
     (1 << 70) in 1
 except TypeError:
-    print('TypeError')
+    print("TypeError")

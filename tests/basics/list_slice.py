@@ -30,4 +30,4 @@ print([][-1:])
 try:
     [][::0]
 except ValueError:
-    print('ValueError')
+    print("ValueError")

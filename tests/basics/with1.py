@@ -1,5 +1,4 @@
 class CtxMgr:
-
     def __enter__(self):
         print("__enter__")
         return self
@@ -19,7 +18,6 @@ except ValueError:
 
 
 class CtxMgr2:
-
     def __enter__(self):
         print("__enter__")
         return self
@@ -27,6 +25,7 @@ class CtxMgr2:
     def __exit__(self, a, b, c):
         print("__exit__", repr(a), repr(b))
         return True
+
 
 try:
     with CtxMgr2() as a:

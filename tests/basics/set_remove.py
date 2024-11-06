@@ -5,13 +5,13 @@ print(list(s))
 try:
     print(s.remove(1), "!!!")
 except KeyError as er:
-    print('KeyError', er.args[0])
+    print("KeyError", er.args[0])
 else:
     print("failed to raise KeyError")
 
 # test sets of varying size
 for n in range(20):
-    print('testing set with {} items'.format(n))
+    print("testing set with {} items".format(n))
     for i in range(n):
         # create set
         s = set()
@@ -27,7 +27,7 @@ for n in range(20):
         for j in range(n):
             if str(j) in s:
                 if j == i:
-                    print(j, 'in s, but it should not be')
+                    print(j, "in s, but it should not be")
             else:
                 if j != i:
-                    print(j, 'not in s, but it should be')
+                    print(j, "not in s, but it should be")

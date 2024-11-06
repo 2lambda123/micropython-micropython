@@ -13,5 +13,5 @@ for i in range(11):
 # are used and the most significant one has the MSB set
 x = 0x8000000000000000
 print((x + 1) % x)
-x = 0x86c60128feff5330
+x = 0x86C60128FEFF5330
 print((x + 1) % x)

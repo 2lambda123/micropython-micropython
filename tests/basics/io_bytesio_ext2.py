@@ -1,4 +1,5 @@
 import io
+
 a = io.BytesIO(b"foobar")
 try:
     a.seek(-10)

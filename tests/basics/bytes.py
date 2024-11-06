@@ -1,14 +1,14 @@
 # literals
-print(b'123')
-print(br'123')
-print(rb'123')
+print(b"123")
+print(rb"123")
+print(rb"123")
 
 # construction
 print(bytes())
-print(bytes(b'abc'))
+print(bytes(b"abc"))
 
 # make sure empty bytes is converted correctly
-print(str(bytes(), 'utf-8'))
+print(str(bytes(), "utf-8"))
 
 a = b"123"
 print(a)
@@ -60,4 +60,4 @@ print(bytes(iter([128, 255])))
 try:
     bytes(-1)
 except ValueError:
-    print('ValueError')
+    print("ValueError")

@@ -1,12 +1,13 @@
 class C1:
     def __call__(self, val):
-        print('call', val)
-        return 'item'
+        print("call", val)
+        return "item"
+
 
 class C2:
-
     def __getattr__(self, k):
         pass
+
 
 c1 = C1()
 print(c1(1))

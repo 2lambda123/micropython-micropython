@@ -6,6 +6,7 @@ except NameError:
     print("SKIP")
     raise SystemExit
 
+
 class C:
     def __init__(self, value):
         self.value = value
@@ -14,20 +15,21 @@ class C:
         return "C({})".format(self.value)
 
     def __add__(self, rhs):
-        print(self, '+', rhs)
+        print(self, "+", rhs)
         return NotImplemented
 
     def __sub__(self, rhs):
-        print(self, '-', rhs)
+        print(self, "-", rhs)
         return NotImplemented
 
     def __lt__(self, rhs):
-        print(self, '<', rhs)
+        print(self, "<", rhs)
         return NotImplemented
 
     def __neg__(self):
-        print('-', self)
+        print("-", self)
         return NotImplemented
+
 
 c = C(0)
 

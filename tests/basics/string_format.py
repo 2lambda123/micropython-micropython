@@ -1,7 +1,9 @@
 # basic functionality test for {} format string
 
+
 def test(fmt, *args):
-    print('{:8s}'.format(fmt) + '>' +  fmt.format(*args) + '<')
+    print("{:8s}".format(fmt) + ">" + fmt.format(*args) + "<")
+
 
 test("}}{{")
 test("{}-{}", 1, [4, 5])
@@ -54,25 +56,25 @@ test("{:@<+6d}", -123)
 test("{:@<-6d}", 123)
 test("{:@<-6d}", -123)
 
-test("{:@>6d}",  -123)
-test("{:@<6d}",  -123)
-test("{:@=6d}",  -123)
-test("{:06d}",  -123)
+test("{:@>6d}", -123)
+test("{:@<6d}", -123)
+test("{:@=6d}", -123)
+test("{:06d}", -123)
 
 test("{:>20}", "foo")
 test("{:^20}", "foo")
 test("{:<20}", "foo")
 
 # formatting bool as int
-test('{:d}', False)
-test('{:20}', False)
-test('{:d}', True)
-test('{:20}', True)
+test("{:d}", False)
+test("{:20}", False)
+test("{:d}", True)
+test("{:20}", True)
 
 # nested format specifiers
-print("{:{}}".format(123, '#>10'))
-print("{:{}{}{}}".format(123, '#', '>', '10'))
-print("{0:{1}{2}}".format(123, '#>', '10'))
+print("{:{}}".format(123, "#>10"))
+print("{:{}{}{}}".format(123, "#", ">", "10"))
+print("{0:{1}{2}}".format(123, "#>", "10"))
 print("{text:{align}{width}}".format(text="foo", align="<", width=20))
 print("{text:{align}{width}}".format(text="foo", align="^", width=10))
 print("{text:{align}{width}}".format(text="foo", align=">", width=30))

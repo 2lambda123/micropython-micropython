@@ -36,7 +36,7 @@ except TypeError:
     print("TypeError")
 
 try:
-    errno.errorcode[1] = 'foo'
+    errno.errorcode[1] = "foo"
 except TypeError:
     print("TypeError")
 

@@ -6,6 +6,7 @@ except NameError:
     print("SKIP")
     raise SystemExit
 
+
 def test():
     global x
 
@@ -21,8 +22,8 @@ def test():
 
     exec(c)
 
-    exec(c, {"x":2})
-    exec(c, {}, {"x":3})
+    exec(c, {"x": 2})
+    exec(c, {}, {"x": 3})
 
     # single/eval mode
     exec(compile("if 1: 10 + 1\n", "file", "single"))
@@ -34,18 +35,19 @@ def test():
 
     # bad mode
     try:
-        compile('1', 'file', '')
+        compile("1", "file", "")
     except ValueError:
         print("ValueError")
 
     # exception within compiled code
     try:
-        exec(compile('noexist', 'file', 'exec'))
+        exec(compile("noexist", "file", "exec"))
     except NameError:
         print("NameError")
-    print(x) # check 'x' still exists as a global
+    print(x)  # check 'x' still exists as a global
 
     # hashing a compiled function object
     print(type(hash(compile("", "", "exec"))))
+
 
 test()

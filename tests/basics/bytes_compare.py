@@ -50,4 +50,4 @@ print(b"1" <= b"1/")
 print(b"10" <= b"1")
 print(b"1/" <= b"1")
 
-print(b'o' == b'\n')
+print(b"o" == b"\n")

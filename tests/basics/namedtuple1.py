@@ -6,7 +6,7 @@ except ImportError:
 
 T = namedtuple("Tup", ["foo", "bar"])
 # CPython prints fully qualified name, what we don't bother to do so far
-#print(T)
+# print(T)
 for t in T(1, 2), T(bar=1, foo=2):
     print(t)
     print(t[0], t[1])
@@ -64,7 +64,7 @@ except TypeError:
 
 # bad argument for member spec
 try:
-    namedtuple('T', 1)
+    namedtuple("T", 1)
 except TypeError:
     print("TypeError")
 
@@ -80,8 +80,8 @@ print(t.foo, t.bar)
 
 # Try single string with comma field separator
 # Not implemented so far
-#T2 = namedtuple("TupComma", "foo,bar")
-#t = T2(1, 2)
+# T2 = namedtuple("TupComma", "foo,bar")
+# t = T2(1, 2)
 
 # Creating an empty namedtuple should not segfault
 T5 = namedtuple("TupEmpty", [])

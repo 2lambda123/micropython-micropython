@@ -1,7 +1,9 @@
 # store to class vs instance
 
+
 class C:
     pass
+
 
 c = C()
 c.x = 1

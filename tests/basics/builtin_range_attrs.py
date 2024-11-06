@@ -15,4 +15,4 @@ print(range(1, 2, 3).step)
 try:
     range(4).start = 0
 except AttributeError:
-    print('AttributeError')
+    print("AttributeError")

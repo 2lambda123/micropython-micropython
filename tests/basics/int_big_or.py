@@ -1,6 +1,6 @@
 print(0 | (1 << 80))
 
-a = 0xfffffffffffffffffffffffffffff
+a = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
 print(a | (1 << 200))
 
 # test + +
@@ -9,7 +9,7 @@ print(0 | (1 << 80))
 print((1 << 80) | (1 << 80))
 print((1 << 80) | 0)
 
-a = 0xfffffffffffffffffffffffffffff
+a = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
 print(a | (1 << 100))
 print(a | (1 << 200))
 print(a | a == 0)
