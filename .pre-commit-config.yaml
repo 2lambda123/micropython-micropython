@@ -13,7 +13,7 @@ repos:
         stages: [commit-msg]
   - repo: https://github.com/astral-sh/ruff-pre-commit
     # Version should be kept in sync with .github/workflows/ruff.yml
-    rev: v0.7.3
+    rev: v0.7.4
     hooks:
       - id: ruff
       - id: ruff-format
