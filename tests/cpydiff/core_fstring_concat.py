@@ -6,7 +6,7 @@ workaround: Use the + operator between literal strings when they are not both f-
 """
 
 x, y = 1, 2
-print("aa" f"{x}")  # works
-print(f"{x}" "ab")  # works
-print("a{}a" f"{x}")  # fails
-print(f"{x}" "a{}b")  # fails
+print(f"aa{x}")  # works
+print(f"{x}ab")  # works
+print(f"a{{}}a{x}")  # fails
+print(f"{x}a{{}}b")  # fails
