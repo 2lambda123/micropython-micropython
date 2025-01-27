@@ -13,13 +13,13 @@ repos:
         stages: [commit-msg]
   - repo: https://github.com/astral-sh/ruff-pre-commit
     # Version should be kept in sync with .github/workflows/ruff.yml
-    rev: v0.9.1
+    rev: v0.9.3
     hooks:
       - id: ruff
       - id: ruff-format
   - repo: https://github.com/codespell-project/codespell
     # Version should be kept in sync with .github/workflows/codespell.yml
-    rev: v2.3.0
+    rev: v2.4.0
     hooks:
       - id: codespell
         name: Spellcheck for changed files (codespell)
